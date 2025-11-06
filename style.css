@@ -589,29 +589,4 @@ footer {
     .marquee { animation-duration: 36s; }
 }
 
-/* --- NAVBAR MOBILE ADJUSTMENTS --- */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: center;
-    padding: 15px 20px;
-  }
-
-  .logo {
-    margin-bottom: 10px;
-  }
-
-  nav ul {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 10px;
-  }
-
-  .btn-quote {
-    margin-top: 5px;
-    align-self: center;
-  }
-}
 

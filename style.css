@@ -83,6 +83,36 @@ body {
   }
 }
 
+/* --- MOBILE NAVBAR FIX (only affects small screens) --- */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 20px;
+  }
+
+  /* keep logo + nav links on same row */
+  .navbar .logo,
+  .navbar nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navbar nav ul {
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  /* center Get a Quote button beneath */
+  .btn-quote {
+    margin-top: 10px;
+    align-self: center;
+  }
+}
+
+
 
 /* HERO */
 .hero {

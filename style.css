@@ -620,7 +620,7 @@ footer {
 }
 /* Adjust spacing only for Budget Direct logo */
 .insurance-section img[alt="Budget Direct"] {
-    margin-right: 10px; /* moves it slightly closer to RACV */
+    margin-right: 30px; /* moves it slightly closer to RACV */
   }
 
 /*Footer*/

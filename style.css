@@ -9,25 +9,80 @@ body {
 }
 
 /* NAVBAR */
+/* BASE NAVBAR STYLE */
 .navbar {
-  display:flex; justify-content:space-between; align-items:center;
-  padding:15px 50px; position:fixed; top:0; width:100%; z-index:100;
-  background:#0b1d39; box-shadow:0 4px 10px rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background: #0b1d39;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
-.logo { display:flex; align-items:center; gap:10px; }
-.logo img { height:45px; }
-.logo h1 { color:#ff7b00; font-size:1.5rem; font-weight:700; }
-nav ul { display:flex; list-style:none; gap:25px; }
-nav a {
-  color:#fff; text-decoration:none; font-weight:500;
-  transition:color .3s;
+
+.navbar img {
+  width: 180px;
+  height: auto;
 }
-nav a:hover, nav a.active { color:#ff7b00; }
-.btn-quote {
-  background:#ff7b00; color:#fff; padding:10px 20px; border-radius:25px;
-  text-decoration:none; transition:background .3s;
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
 }
-.btn-quote:hover { background:#e56e00; }
+
+.navbar ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: #f7c948;
+}
+
+/* RESPONSIVE FIXES */
+@media (max-width: 900px) {
+  .navbar {
+    flex-direction: column;
+    padding: 10px 20px;
+  }
+
+  .navbar img {
+    width: 140px;
+    margin-bottom: 10px;
+  }
+
+  .navbar ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .navbar ul li a {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .navbar ul li a {
+    font-size: 0.95rem;
+  }
+
+  .navbar img {
+    width: 110px;
+  }
+}
+
 
 /* HERO */
 .hero {
@@ -532,54 +587,6 @@ footer {
     .marquee__inner { gap: 30px; }
     .marquee__inner img { height: 38px; }
     .marquee { animation-duration: 36s; }
-}
-
-/* ===== Responsive Navbar Fix (no hamburger) ===== */
-@media (max-width: 900px) {
-  .navbar {
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 10px 20px;
-  }
-
-  .navbar img {
-    width: 120px; /* smaller logo on mobile */
-    margin-bottom: 10px;
-  }
-
-  .navbar ul {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    width: 100%;
-  }
-
-  .navbar ul li a {
-    font-size: 0.9rem;
-    padding: 8px;
-  }
-}
-
-@media (max-width: 500px) {
-  .navbar {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .navbar img {
-    width: 100px;
-  }
-
-  .navbar ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .navbar ul li a {
-    display: block;
-    font-size: 0.95rem;
-  }
 }
 
 

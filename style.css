@@ -496,7 +496,7 @@ footer {
     cursor: pointer;
   }
 
- /* INSURANCE STREAMING MARQUEE */
+/* INSURANCE STREAMING MARQUEE - Responsive Version */
 .insurance-section {
     background: #fff; /* white background */
     text-align: center;
@@ -504,7 +504,7 @@ footer {
     overflow: hidden;
     position: relative;
     z-index: 1;
-    clip-path: ellipse(100% 85% at 50% 15%); /* top curve */
+    clip-path: ellipse(100% 85% at 50% 15%);
 }
 
 .insurance-section h2 {
@@ -522,69 +522,53 @@ footer {
 
 .marquee {
     display: flex;
-    width: calc(200% + 80px); /* ensures second set aligns perfectly */
     animation: marqueeAnim 22s linear infinite;
     align-items: center;
     will-change: transform;
 }
 
-@keyframes marqueeAnim {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); } /* scroll exactly one set width */
-}
-
 .marquee__inner {
     display: flex;
-    gap: 80px;
-    width: calc(50% + 120px); /* add extra space at the end */
-    padding: 10px 40px;
-    justify-content: flex-start;
-    box-sizing: border-box;
-  }
+    gap: 40px; /* spacing between logos */
+    flex-shrink: 0; /* prevent shrinking */
+}
 
 .marquee__inner img {
-    height: 60px;
+    height: 60px; /* scales nicely */
     width: auto;
-    filter: none;
     opacity: 0.9;
     transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
+/* Duplicate sets for continuous animation */
+.marquee__inner[aria-hidden="true"] {
+    pointer-events: none;
+}
+
+/* Hover pause */
 .insurance-marquee:hover .marquee {
     animation-play-state: paused;
 }
 
-.marquee__inner img:hover {
-    transform: scale(1.08);
-    filter: none;
-    opacity: 1;
-}
-
+/* Animation */
 @keyframes marqueeAnim {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); } /* scroll by width of one set */
+    100% { transform: translateX(-50%); }
 }
 
-/* Add spacing specifically between Budget Direct and Suncorp */
-.marquee__inner img[alt="Budget Direct"] { margin-right: 60px; }
-.marquee__inner img[alt="Suncorp"] { margin-left: 60px; }
-
-/* Responsive adjustments */
+/* Responsive */
 @media (max-width: 900px) {
-    .marquee__inner { gap: 40px; padding: 8px 20px; }
-    .marquee__inner img { height: 48px; }
+    .marquee__inner { gap: 30px; }
+    .marquee__inner img { height: 50px; }
     .marquee { animation-duration: 30s; }
 }
 
 @media (max-width: 480px) {
-    .marquee__inner { gap: 30px; }
-    .marquee__inner img { height: 38px; }
+    .marquee__inner { gap: 20px; }
+    .marquee__inner img { height: 40px; }
     .marquee { animation-duration: 36s; }
 }
-/* Adjust spacing only for Budget Direct logo */
-.insurance-section img[alt="Budget Direct"] {
-    margin-right: 30px; /* moves it slightly closer to RACV */
-  }
+
 
 /*Footer*/
 

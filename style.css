@@ -618,5 +618,9 @@ footer {
     .marquee__inner img { height: 38px; }
     .marquee { animation-duration: 36s; }
 }
-
+/* Adjust spacing only for Budget Direct logo */
+.insurance-section img[alt="Budget Direct"] {
+    margin-right: 1px; /* moves it slightly closer to RACV */
+  }
+  
 

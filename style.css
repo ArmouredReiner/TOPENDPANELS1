@@ -622,4 +622,31 @@ footer {
 .insurance-section img[alt="Budget Direct"] {
     margin-right: 1px; /* moves it slightly closer to RACV */
   }
+
+/*Footer*/
+
+footer {
+    background:#08162c;
+    text-align:center;
+    padding:20px 0;
+    font-size:.9rem;
+    color:#fff;
+  }
+  
+  .social-icons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .social-icon svg {
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+  }
+  
+  .social-icon:hover svg {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 12px #ff7b00);
+  }
   
